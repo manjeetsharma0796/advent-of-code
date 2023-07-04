@@ -6,15 +6,20 @@ const sumOfNumbers = (numbers) => {  //numbers = [4,5,6,7,8]
   return numbers.reduce(sum, 0);
 }
 
-const getMaxCalorieElf = (elves) => {
-  let max = sumOfNumbers(elves[0]);
+const compareNumbers = (a, b) => {
+  return b - a;
+}
 
-  elves.forEach((elf) => {
-    const currentSumOfCalorie = sumOfNumbers(elf);
-    max = Math.max(currentSumOfCalorie, max);
+const getMaxCalorieElf = (carriedCaloriesByElves) => {
+  const totalCalories = [];
+
+  carriedCaloriesByElves.forEach((calorieCarriedByElv) => {
+    const currentSumOfCalories = sumOfNumbers(calorieCarriedByElv);
+    totalCalories.push(currentSumOfCalories);
   });
 
-  return max;
+  const [max1, max2, max3] = totalCalories.sort(compareNumbers).slice(0, 3);
+  return sumOfNumbers([max1, max2, max3]);
 }
 
 exports.getMaxCalorieElf = getMaxCalorieElf;
