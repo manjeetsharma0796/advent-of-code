@@ -69,7 +69,7 @@ describe('getMax', () => {
   });
 });
 
-describe('getMaxThreeCaloriesByElves', () => {
+describe('getSumMaxThreeCaloriesByElves', () => {
   it('Should give top three max calories', () => {
     const actual = getSumMaxThreeCaloriesByElves([[1],[2],[3],[0]]);
     const expected = 6;
