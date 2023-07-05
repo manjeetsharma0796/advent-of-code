@@ -28,18 +28,23 @@ const display = (message, result) => {
 //Part 1
 const getMaxCaloriesByElves = (caloriesCarriedByElves) => {
   const totalCaloriesByElvesInDescending = getTotalCaloriesByElves(caloriesCarriedByElves);
-  const max = descendingSorter(totalCaloriesByElvesInDescending).slice(0, 1);
+  const max = descendingSorter(totalCaloriesByElvesInDescending)[0];
   display('PART 1 - The maximum calorie carried by an elf is', max);
-  // return sumOfNumbers(max);
+  return max;
 }
 
 //Part 2
-const getMaxThreeCaloriesByElves = (caloriesCarriedByElves) => {
+const getSumMaxThreeCaloriesByElves = (caloriesCarriedByElves) => {
   const totalCaloriesByElvesInDescending = getTotalCaloriesByElves(caloriesCarriedByElves);
   const [max1, max2, max3] = descendingSorter(totalCaloriesByElvesInDescending).slice(0, 3);
   display('PART 2 - The top three max calories carried by elves are', [max1, max2, max3]);
-  // return sumOfNumbers([max1, max2, max3]);
+  return sumOfNumbers([max1, max2, max3]);
 }
 
-exports.getMaxCaloriesByElves = getMaxCaloriesByElves;
-exports.getMaxThreeCaloriesByElves = getMaxThreeCaloriesByElves;
+module.exports = {
+  sumOfNumbers,
+  descendingSorter,
+  getTotalCaloriesByElves,
+  getMaxCaloriesByElves,
+  getSumMaxThreeCaloriesByElves,
+}

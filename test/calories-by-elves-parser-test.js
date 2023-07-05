@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
-const { parseCaloriesByElves } = require("../src/calories-by-elves-parser");
 const { deepStrictEqual } = require("assert");
+const { parseCaloriesByElves } = require("../src/calories-by-elves-parser");
 
 describe('parseCaloriesByElves', () => {
   it('Should parse and give calorie of a elf', () => {
